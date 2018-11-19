@@ -1,0 +1,68 @@
+php requirements
+    version: 7.1.*
+    extensions:
+        php-yml
+        php-pdo
+
+
+To run application set the config file in /config/config.yml.back
+and rename to /config/config.yml
+
+GET /index.php/persons/ show all persons
+GET /index.php/persons/:id show 1 person by id
+POST /index.php/persons/ create new person
+    Request as Content-Type: application/json
+```json
+    {
+        "name": "name",
+        "address": "name",
+        "birth_date": "1981-02-17 00:00:00"
+    }
+```
+    Response 201
+
+```json
+    {
+        "id": 115,
+        "name": "name",
+        "address": "name",
+        "birth_date": "1981-02-17 00:00:00"
+    }
+```
+PUT /index.php/persons/:id update person
+    Request as Content-Type: application/json
+```json
+    {
+
+    	"name": "new name",
+    	"address": "name",
+    	"birth_date": "1981-02-17 00:00:00"
+    }
+```
+    Response 202
+```json
+    {
+        "id": "115",
+        "name": "new name",
+        "address": "name",
+        "birth_date": "1981-02-17 00:00:00"
+    }
+```
+PATCH /index.php/persons/:id update one filed of person
+    Request as Content-Type: application/json
+```json
+    {
+    	"address": "new address"
+    }
+```
+    Response 202
+```json
+    {
+        "id": "115",
+        "name": "new name",
+        "address": "new address",
+        "birth_date": "1981-02-17 00:00:00"
+    }
+```
+DELETE /index.php/persons/:id remove person
+RESPONSE 204

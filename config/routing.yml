@@ -1,0 +1,11 @@
+
+/persons:
+  controller: Persons
+
+/persons/website:
+  controller: Persons
+  method: website
+
+/persons/:id:
+  controller: Persons
+  method: person
